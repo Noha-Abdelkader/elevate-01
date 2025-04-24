@@ -1,0 +1,26 @@
+import { useTranslations } from "next-intl";
+import SearchBar from "./_components/search-bar";
+import React from "react";
+import AsideNav from "./_components/aside-nav";
+import { SearchProvider } from "@/components/providers/context/searchContext";
+
+const homeLayout =  ({ children  }: { children: React.ReactNode }) => {
+
+  // Translations
+  const t = useTranslations();
+ 
+  return (
+    <main className="grid grid-cols-12 gap-4 min-h-screen p-6 max-w-7xl mx-auto ">
+      <AsideNav  />
+      <div className="col-span-9">
+        <SearchProvider>
+        {/* top */}
+        <SearchBar />
+        <div>{children}</div>
+        </SearchProvider>
+      </div>
+    </main>
+  );
+};
+
+export default homeLayout;

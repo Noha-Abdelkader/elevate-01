@@ -1,0 +1,7 @@
+{
+    "register" : "register" ,
+    "error-message":"Something wrong",
+    "error-page" : "page not found",
+    "start-quiz":"start quiz",
+    "search-quiz":"search quiz"
+}
