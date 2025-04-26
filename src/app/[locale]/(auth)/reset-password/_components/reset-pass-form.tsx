@@ -21,7 +21,6 @@ import {
 } from "@/lib/schemes/auth.schema";
 // import { useForgetPass } from "../_hooks/use-forget-pass";
 import FormError from "@/components/common/form-error";
-import { toast } from "sonner";
 import { useResetPass } from "../_hooks/use-reset-pass";
 
 export default function ResetPassForm() {

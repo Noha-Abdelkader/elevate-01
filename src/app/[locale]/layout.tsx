@@ -6,8 +6,6 @@ import { Toaster } from "@/components/ui/sonner";
 
 import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils/tailwaind-utils";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/auth";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -41,8 +39,6 @@ export default async  function LocaleLayout({
   }
 
 
-  // const session = await getServerSession(authOptions);
-  // console.log(session)
 
   return (
     <html

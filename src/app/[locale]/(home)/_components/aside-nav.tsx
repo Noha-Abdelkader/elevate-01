@@ -10,7 +10,6 @@ import { MdSpaceDashboard } from "react-icons/md";
 import { LuTimer } from "react-icons/lu";
 import { RiLogoutBoxFill } from "react-icons/ri";
 import { signOut, useSession } from "next-auth/react";
-import { cookies } from "next/headers";
 
 const AsideNav = () => {
   // Hooks
@@ -18,7 +17,7 @@ const AsideNav = () => {
   const { data } = useSession();
 
   //aside nav
-  type navItemType = { title: string; href?: string; icon: any };
+  type navItemType = { title: string; href?: string; icon: unkown };
 
   let navItem: navItemType[] = [
     { title: "Dashboard", href: "/dashboard", icon: <MdSpaceDashboard /> },
@@ -26,7 +25,7 @@ const AsideNav = () => {
     { title: "logout", icon: <RiLogoutBoxFill /> },
   ];
 
-  navItem = navItem.filter((item, index) => {
+  navItem = navItem.filter((item) => {
     if (data?.user.role == "user") return item;
     else return item.title !== "Quiz History";
   });

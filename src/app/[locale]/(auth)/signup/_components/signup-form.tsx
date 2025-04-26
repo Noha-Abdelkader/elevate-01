@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 
 import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -38,7 +37,7 @@ export default function SignUpForm() {
   });
 
   // hooks
-  const { isError, error, isPending, mutate } = useSignup();
+  const {  error, isPending, mutate } = useSignup();
 
   async function onSubmit(values: SignupSchemaFields) {
     mutate(values);

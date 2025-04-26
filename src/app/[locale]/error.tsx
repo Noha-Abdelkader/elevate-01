@@ -1,16 +1,11 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useRouter } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { BiSolidCommentError } from "react-icons/bi";
 
 export default function Error({
-  error,
-  reset,
 }: {
-  error: Error & { digest?: string };
-  reset: () => void;
 }) {
   const t = useTranslations();
 

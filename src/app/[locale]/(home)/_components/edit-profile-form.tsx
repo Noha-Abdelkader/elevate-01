@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React  from "react";
 
 import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -23,7 +22,6 @@ import {
 
 import FormError from "@/components/common/form-error";
 import useEditProfile from "../_hooks/use-edit-profile";
-import { Session } from "@/lib/utils/auth-info";
 import { useSession } from "next-auth/react";
 
 export default  function EditProfileForm() {

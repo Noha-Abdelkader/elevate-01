@@ -24,7 +24,7 @@ export default function AuthUI({
   title?: string;
 }) {
   // Social type & define
-  type Social = { icon: any; href: string };
+  type Social = { icon: unkown; href: string };
   const socialLinks: Social[] = [
     { icon: <FaGoogle />, href: "www.google.com" },
     { icon: <FaTwitter />, href: "www.twitter.com" },

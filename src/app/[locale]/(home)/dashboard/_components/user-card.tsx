@@ -1,5 +1,4 @@
 import getUserHistory from "@/lib/api/user-history.api";
-import catchError from "@/lib/utils/catche-error";
 import React from "react";
 import { Progress } from "@/components/ui/progress";
 import { Session } from "@/lib/utils/auth-info";
@@ -13,10 +12,9 @@ import User from "/assets/images/user.png";
 import Image from "next/image";
 
 // types
-type userTrakType = { icon: any; time: string; header: string };
+type userTrakType = { icon: unkown; time: string; header: string };
 
 const UserCard = async () => {
-  
   // get session
   const session = await Session();
 
@@ -30,7 +28,7 @@ const UserCard = async () => {
   // get user history
   const payload = await getUserHistory();
   if (!payload) return null;
-  const {userData} = payload;
+  const { userData } = payload;
   return (
     <div className="card-wrapper grid grid-cols-10">
       {/* image */}
@@ -53,10 +51,11 @@ const UserCard = async () => {
         {session && (
           <span className="text-dark-200 text-xs">{session.username}</span>
         )}
-        <Progress
+        <Progress value={30} />
+        {/* <Progress
           value={  Number(userData?.history.avgAnswerTime)?.toFixed(2) ??30
           }
-        />
+        /> */}
         <ul className="grid grid-cols-3  md:grid-cols-10 gap-2 !mt-5 ">
           {userTrack.map((element, index) => {
             return (

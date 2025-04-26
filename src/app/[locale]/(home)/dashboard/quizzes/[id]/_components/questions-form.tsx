@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Timer from "./timer";
 
 import { useForm } from "react-hook-form";
@@ -49,7 +49,6 @@ const QuestionsForm = ({
     error,
     isError,
     mutateAsync,
-    data: check,
   } = useCheckQuestions();
 
   // Form

@@ -3,7 +3,6 @@ import createMiddleware from "next-intl/middleware";
 import { NextRequest, NextResponse } from "next/server";
 import { routing } from "./i18n/routing";
 import { getToken } from "next-auth/jwt";
-import { cookies } from "next/headers";
 
 const publicPages = [
   "/signin",
@@ -37,6 +36,7 @@ const authMiddleware = withAuth(
   }
 );
 
+// global regex
 function routeRegex(routes: string[]) {
   return RegExp(
     `^(/(${routing.locales.join("|")}))?(${routes
@@ -51,26 +51,35 @@ export default async function middleware(req: NextRequest) {
   const publicPathnameRegex = routeRegex(publicPages);
   const isPublicPage = publicPathnameRegex.test(req.nextUrl.pathname);
 
+  // redirect to link
+  //incase start project or try to navigate any link non logic
+  const locale = req.nextUrl.locale || routing.defaultLocale;
+  const redirectURL = new URL(`/${locale}/dashboard`, req.nextUrl.origin);
+
+  if (req.nextUrl.pathname == "/" || req.nextUrl.pathname == `/${locale}`) {
+    return NextResponse.redirect(redirectURL);
+  }
+
+  // in case logged in
   const accessToken = await getToken({ req });
 
   if (accessToken) {
     const response = NextResponse.next();
-    response.cookies.set("user_role", accessToken.user.role);
+    response.cookies.set("user_role", accessToken.user.role ?? "");
     return response;
   }
 
   // if public fire translate
   if (isPublicPage) {
-    // redirect to
-    const redirectURL = new URL("/dashboard", req.nextUrl.origin);
-
     // if try to navigate to on of public page while user logged in will redirect
     if (accessToken) {
       return NextResponse.redirect(redirectURL);
     }
+
     return handleI18nRouting(req);
   } else {
     return (authMiddleware as any)(req);
+    
   }
 }
 

@@ -1,13 +1,11 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 
 import { Button } from "@/components/ui/button";
 import QuizzesPlaceholder from "./quizzes-placeholder";
-import getQuizzesListAction from "../_actions/quizzes-list.action";
-import catchError from "@/lib/utils/catche-error";
 import FormError from "@/components/common/form-error";
 import useQuizzesList from "../_hooks/use-quizzes-list";
 import { useSearch } from "@/components/providers/context/searchContext";
@@ -74,7 +72,7 @@ const QuizzesList = () => {
   return (
     <>
       <ul className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
-        {previewQuizess.map((quiz: Quiz, index: number) => {
+        {previewQuizess.map((quiz: Quiz) => {
           return (
             <li key={quiz?._id} className="col-span-1 relative  w-full">
               <Link href={`/dashboard/quizzes/${quiz._id}`}>

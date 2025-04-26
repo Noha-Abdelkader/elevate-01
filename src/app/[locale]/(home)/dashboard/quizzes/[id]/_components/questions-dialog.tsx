@@ -18,7 +18,7 @@ const QuestionsDialog = ({ id, time }: { id: string; time: number }) => {
   const [startExam, setStartExam] = useState<boolean>(false);
 
   // Hooks
-  const { isPending, isError, error, questions, refetch } = useGetQuestions(id);
+  const {  questions, refetch } = useGetQuestions(id);
 
   // variables
   const instructions: string[] = [

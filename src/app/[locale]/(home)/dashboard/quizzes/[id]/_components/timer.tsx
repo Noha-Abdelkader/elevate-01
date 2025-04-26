@@ -1,5 +1,4 @@
 "use client";
-import { useTimeCheck } from "@/lib/utils/timer-check";
 import React, { useEffect, useState } from "react";
 import { LuTimer } from "react-icons/lu";
 

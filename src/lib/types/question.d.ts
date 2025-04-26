@@ -14,12 +14,11 @@ declare type Answer = {
   key: string;
 };
 
-
 declare type checkQuestions = {
   QID: string;
   Question: string;
   correctAnswer: string;
-  answers: {};
+  answers: unkown;
 };
 
 declare type CheckQuestionsResponse = {

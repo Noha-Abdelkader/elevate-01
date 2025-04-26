@@ -2,7 +2,6 @@ import { useMutation } from "@tanstack/react-query";
 import { signupAction } from "../_actions/signup-action";
 import catchError from "@/lib/utils/catche-error";
 import { SignupSchemaFields } from "@/lib/schemes/auth.schema";
-import { useRouter } from "next/router";
 
 export default function useSignup() {
   
@@ -14,7 +13,6 @@ export default function useSignup() {
     },
     onSuccess(data) {
       // Navigation
-      console.log(data, "data");
       window.location.href = "/signin";
       return data;
     }

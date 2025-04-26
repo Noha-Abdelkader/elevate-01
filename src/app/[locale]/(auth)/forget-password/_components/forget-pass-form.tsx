@@ -14,14 +14,12 @@ import { Input } from "@/components/ui/input";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Link } from "@/i18n/navigation";
 import {
   ForgetPassSchema,
   ForgetPassSchemaFields,
 } from "@/lib/schemes/auth.schema";
 import { useForgetPass } from "../_hooks/use-forget-pass";
 import FormError from "@/components/common/form-error";
-import { toast } from "sonner";
 
 export default function ForgetPassForm() {
   // Form

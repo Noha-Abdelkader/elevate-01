@@ -6,12 +6,12 @@ import resetPassAction from "../_actions/reset-pass.action";
 
 export function useResetPass() {
   // Mutation
-  const { mutate, isError, error, isPending, data } = useMutation({
+  const { mutate, isError, error, isPending } = useMutation({
     mutationFn: async (value: ResetPassSchemaFields) => {
       const [payload] = await catchError(resetPassAction(value));
       return payload;
     },
-    onSuccess: (response) => {
+    onSuccess: () => {
       toast.success("Password reset successfully !");
       // navigate to home page
       setTimeout(() => {

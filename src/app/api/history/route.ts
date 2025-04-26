@@ -1,4 +1,3 @@
-import { AuthHeader } from "@/lib/utils/auth-info";
 import { getToken } from "next-auth/jwt";
 import { NextRequest, NextResponse } from "next/server";
 

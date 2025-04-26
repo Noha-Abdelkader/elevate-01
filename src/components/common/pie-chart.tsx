@@ -1,5 +1,5 @@
-import React, { PureComponent } from "react";
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer, LabelList, RadialBar, Label } from "recharts";
+import React from "react";
+import { PieChart, Pie, Cell, Label } from "recharts";
 
 const COLORS = ["#02369C", "#CC1010"];
 export default function PieCharts({

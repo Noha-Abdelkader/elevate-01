@@ -11,14 +11,13 @@ export function useVerifyCode() {
   const router = useRouter();
 
   // Mutation
-  const { mutate, isError, error, isPending, data } = useMutation({
+  const { mutate, isError, error, isPending } = useMutation({
     mutationFn: async (value: VerifyCodeSchemaFields) => {
       const [payload] = await catchError(verifyCodeAction(value));
       return payload;
     },
 
-    onSuccess: (data) => {
-      // data && toast.success(data.status);
+    onSuccess: () => {
       toast.success("Verification code is correct, please reset your password");
       // navigate to reset  password page
       setTimeout(() => {

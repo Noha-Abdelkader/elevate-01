@@ -1,5 +1,4 @@
 import React from "react";
-import AuthUI from "./_components/auth-ui";
 
 export default function layout({
   children,
