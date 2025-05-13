@@ -8,6 +8,11 @@ const nextConfig = {
         hostname: "exam.elevateegy.com",
         // pathname: "/uploads/**",
       },
+      {
+        protocol: "https",
+        hostname: "img.freepik.com",
+        // pathname: "/uploads/**",
+      },
     ],
     localPatterns: [
       {

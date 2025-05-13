@@ -10,7 +10,7 @@ export default function useSignIn() {
   const { error, isError, isPending, mutateAsync  , data} = useMutation({
     mutationFn: async (values: SigninSchemaFields) => {
       const response = await signIn("credentials", {
-        callbackUrl: "/dashboard", //redirect as false so will not work
+        // callbackUrl: "/dashboard", //redirect as false so will not work
         redirect: false,
         email: values.email,
         password: values.password,
@@ -18,10 +18,14 @@ export default function useSignIn() {
 
       return response;
     },
+    //check data and redirect url
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     onSuccess: (data) => {
-      toast.success("Sign in successfully")
+      toast.success("Sign in successfully");
+      // console.log(data )
       setTimeout(() => {
-        window.location.href = data?.url ?? "/dashboard";
+        // window.location.href = data?.url ?? "/dashboard";
+        window.location.href ="/dashboard";
       }, 1000);
     },
     onError: (error) => {

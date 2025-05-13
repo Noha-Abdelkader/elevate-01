@@ -64,7 +64,7 @@ export default async function catchError<T>(
     const payload = await promiseFunction;
     
       if (  "code" in payload  ) {
-        console.log("in code", payload.code);
+        // console.log("in code", payload.code);
         if (payload.code === 401) 
           {
             // throw new AuthenticationError(payload.message, payload.code);

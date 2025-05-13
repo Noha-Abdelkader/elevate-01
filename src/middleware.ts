@@ -47,18 +47,40 @@ function routeRegex(routes: string[]) {
 }
 
 export default async function middleware(req: NextRequest) {
+console.log('================================================')
   // public
   const publicPathnameRegex = routeRegex(publicPages);
   const isPublicPage = publicPathnameRegex.test(req.nextUrl.pathname);
-
+  
   // redirect to link
   //incase start project or try to navigate any link non logic
-  const locale = req.nextUrl.locale || routing.defaultLocale;
+  const locale = req.nextUrl.locale || routing.defaultLocale ;
+  // console.log(locale , 'seted locallllll -----------')
+
+
+  //  if dont have local
+    if (!req.nextUrl.locale) {
+      // const redirectURL2 = new URL(`${locale}${req.nextUrl.pathname}` , req.nextUrl.origin);
+      // console.log("no locallllllll---------", NextResponse.redirect(redirectURL2));
+      // const redirectURL = new URL(`/${locale}${req.nextUrl.pathname}` , req.nextUrl.origin);
+      // return NextResponse.redirect(redirectURL);
+    }
+  // console.log(req.nextUrl.origin, "req.nextUrl.origin" );
+  // console.log(req.nextUrl.pathname, "---------req.nextUrl.path" );
   const redirectURL = new URL(`/${locale}/dashboard`, req.nextUrl.origin);
 
-  if (req.nextUrl.pathname == "/" || req.nextUrl.pathname == `/${locale}`) {
+
+
+  if (
+    req.nextUrl.pathname == "/" ||
+    req.nextUrl.pathname == `/${locale}` ||
+    req.nextUrl.pathname == "/dashboard"
+  ) {
+    // console.log("no secound--------", NextResponse.redirect(redirectURL));
+
     return NextResponse.redirect(redirectURL);
   }
+
 
   // in case logged in
   const accessToken = await getToken({ req });
@@ -78,6 +100,7 @@ export default async function middleware(req: NextRequest) {
 
     return handleI18nRouting(req);
   } else {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return (authMiddleware as any)(req);
     
   }

@@ -20,7 +20,6 @@ const QuizzesList = () => {
     isError,
     isPending,
     fetchNextPage,
-    isFetching,
     hasNextPage,
     isFetchingNextPage,
     isLoading,
@@ -50,7 +49,7 @@ const QuizzesList = () => {
 
   let previewQuizess = [];
 
-  let allQuizess = data?.pages
+  const allQuizess = data?.pages
     .flatMap((el) => el?.subjects)
     .filter((quiz): quiz is Quiz => quiz !== undefined);
 
@@ -74,7 +73,10 @@ const QuizzesList = () => {
       <ul className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
         {previewQuizess.map((quiz: Quiz) => {
           return (
-            <li key={quiz?._id} className="col-span-1 relative  w-full">
+            <li
+              key={quiz?._id}
+              className="col-span-1 relative  w-full *:duration-500 *:transition-all *:ease-linear"
+            >
               <Link href={`/dashboard/quizzes/${quiz._id}`}>
                 <Image
                   src={quiz.icon}
@@ -83,8 +85,8 @@ const QuizzesList = () => {
                   alt={quiz?.name}
                   className="w-full"
                 />
-                <div className="bg-main-100/60 rounded-md p-2 absolute inset-x-3 bottom-3">
-                  <h2 className="text-white">{quiz.name}</h2>
+                <div className="bg-main-100/60  text-white rounded-md p-2 absolute inset-x-3 bottom-3  hover:inset-0 flex items-center justify-center hover:*:scale-125 *:duration-500 *:transition-all *:ease-linear hover:*:before:w-full ">
+                  <h2 className="relative before:content-'' before:absolute before:bottom-0 before:left-0 before:bg-white before:h-0.5 before:w-0">{quiz.name}</h2>
                 </div>
               </Link>
             </li>

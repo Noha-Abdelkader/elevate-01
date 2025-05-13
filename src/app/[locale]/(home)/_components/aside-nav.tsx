@@ -17,7 +17,7 @@ const AsideNav = () => {
   const { data } = useSession();
 
   //aside nav
-  type navItemType = { title: string; href?: string; icon: unkown };
+  type navItemType = { title: string; href?: string; icon: unknown };
 
   let navItem: navItemType[] = [
     { title: "Dashboard", href: "/dashboard", icon: <MdSpaceDashboard /> },
@@ -58,14 +58,12 @@ const AsideNav = () => {
                 path == item.href ? "bg-main-100 text-white" : "text-dark-300"
               }`}
             >
-              <span className="text-lg">{item.icon}</span>
+              <span className="text-lg">{item.icon as React.ReactNode}</span>
               <span className=" hidden md:inline-block">{item.title}</span>
             </Link>
           </li>
-        ))}
-      </ul>
+        ))}      </ul>
     </aside>
   );
 };
-
 export default AsideNav;

@@ -4,9 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import { BiSolidCommentError } from "react-icons/bi";
 
-export default function Error({
-}: {
-}) {
+export default function Error() {
   const t = useTranslations();
 
   // no html & body tag as layout for local handle it

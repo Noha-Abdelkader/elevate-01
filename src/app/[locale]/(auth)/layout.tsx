@@ -7,7 +7,7 @@ export default function layout({
   title?: string;
 }>) {
   return (
-    <main className="grid  sm:grid-cols-2">
+    <main className="grid  sm:grid-cols-2   ">
       {children}
       {/* <AuthUI children={children} /> */}
     </main>

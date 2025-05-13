@@ -12,14 +12,13 @@ import User from "/assets/images/user.png";
 import Image from "next/image";
 
 // types
-type userTrakType = { icon: unkown; time: string; header: string };
-
+type userTrakType = { icon: unknown; time: string; header: string };
 const UserCard = async () => {
   // get session
   const session = await Session();
 
   // data
-  let userTrack: userTrakType[] = [
+  const userTrack: userTrakType[] = [
     { icon: <AiFillFlag />, time: "278", header: "quiz passed" },
     { icon: <IoTimeSharp />, time: "13 min", header: "Fastest Time" },
     { icon: <IoCheckmarkCircle />, time: "200", header: "Correct Answers" },
@@ -66,7 +65,7 @@ const UserCard = async () => {
                 } `}
               >
                 <div className="p-2 flex items-center justify-center shadow_dark bg-white text-main-100 rounded-lg text-xl size-9">
-                  {element.icon}
+                  {element.icon as React.ReactNode}
                 </div>
                 <div className=" text-border">
                   <h5 className="font-semibold">
@@ -79,8 +78,7 @@ const UserCard = async () => {
                 </div>
               </li>
             );
-          })}
-        </ul>
+          })}        </ul>
       </div>
     </div>
   );

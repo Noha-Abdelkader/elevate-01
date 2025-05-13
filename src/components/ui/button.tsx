@@ -19,7 +19,8 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: " !shadow-none",
         link: "text-main-100 underline-offset-4 hover:underline",
-        main: "  border-[1px] border-transparent text-white bg-main-100 hover:bg-transparent hover:text-main-100 hover:border-main-100 ease-in-out duration-500 shadow_faint",
+        main: "  border-[1px] border-transparent text-white bg-main-100 hover:bg-transparent hover:text-main-100 hover:border-main-100 ease-in-out duration-500 transition-all shadow_faint",
+        "main-before": "  border-[1px] border-transparent text-white bg-main-100 hover:bg-transparent hover:text-main-100 hover:border-main-100 ease-in-out duration-500 shadow_faint before:content-'' before:",
       },
       size: {
         default: "h-9 px-4 py-5 ",

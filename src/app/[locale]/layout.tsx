@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/sonner";
 
 import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils/tailwaind-utils";
+// import "animate.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -44,8 +45,9 @@ export default async  function LocaleLayout({
     <html
       lang={locale}
       dir={checkDirction(locale)}
-      className={`${cn(inter.variable)}  bg-[#FBF9F9] `}
+      className={`${cn(inter.variable)}  h-full `}
     >
+      {/* bg-[#FBF9F9] */}
       <body>
         <Providers>
           {children}

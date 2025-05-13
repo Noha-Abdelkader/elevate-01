@@ -18,8 +18,9 @@ export function useForgetPass() {
 
     onSuccess: (response) => {
       // show notifictaion message
-      response?.info && toast.success(response.info);
-
+      if (response?.info) {
+        toast.success(response.info);
+      }
       // navigate to verify code page
       setTimeout(() => {
         router.push("/verify-code");

@@ -39,7 +39,7 @@ const Timer = ({ time, stopTimer, onTimeChange, onTimerEnd }: TimerProps) => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [stopTimer, onTimerEnd]);
+  }, [stopTimer, onTimerEnd, onTimeChange]);
 
   // Format time
   function formatTime(time: number) {
@@ -65,6 +65,6 @@ const Timer = ({ time, stopTimer, onTimeChange, onTimerEnd }: TimerProps) => {
       </span>
     </div>
   );
-};
 
+};
 export default Timer;

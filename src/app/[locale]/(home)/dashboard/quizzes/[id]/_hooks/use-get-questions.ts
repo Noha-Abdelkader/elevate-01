@@ -2,7 +2,7 @@ import catchError from "@/lib/utils/catche-error";
 import { useQuery } from "@tanstack/react-query";
 import getQuestionsAction from "../_actions/get-questions.action";
 
-export default function (id: string) {
+export default function useGetQuestions(id: string) {
   const {
     isPending,
     isError,

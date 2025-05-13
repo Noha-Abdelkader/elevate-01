@@ -7,10 +7,10 @@ import Placeholder from "../_components/placeholder";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/auth";
 
+// searchParams,
+// }: {
+// searchParams?: { query?: string };
 const Page = async ({
-  searchParams,
-}: {
-  searchParams?: { query?: string };
 }) => {
   const session = await getServerSession(authOptions);
 
