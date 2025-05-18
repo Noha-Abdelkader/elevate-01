@@ -6,6 +6,8 @@ import { JSON_HEADER } from "./lib/constants/api.constants";
 export const authOptions: NextAuthOptions = {
   pages: {
     signIn: "/signin",
+    signOut:"/signin",
+    
   },
   providers: [
     Credentials({
@@ -15,6 +17,7 @@ export const authOptions: NextAuthOptions = {
         password: {},
       },
       authorize: async (credentials) => {
+        
         const response = await fetch(`${process.env.BASEURL}/auth/signin`, {
           method: "POST",
           body: JSON.stringify({
@@ -30,10 +33,11 @@ export const authOptions: NextAuthOptions = {
           throw new Error(payload.message ?? "failed login");
         }
 
+        console.log("payload" , payload)
         return {
           id: payload.user._id,
           token: payload.token,
-          user: { ...payload.user },
+          user: payload.user,
         };
       },
     }),
