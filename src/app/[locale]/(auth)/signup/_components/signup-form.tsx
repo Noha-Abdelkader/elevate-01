@@ -206,7 +206,6 @@ export default function SignUpForm() {
         {error && <FormError>{error.message}</FormError>}
 
         <Button
-          onClick={() => onSubmit(form.getValues())}
           type="submit"
           className="w-full bg-custom-main-100 border-2 border-transparent hover:bg-transparent hover:text-custom-main-100 hover:border-custom-main-100 "
           disabled={
