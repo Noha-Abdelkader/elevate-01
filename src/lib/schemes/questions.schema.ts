@@ -1,7 +1,6 @@
 import { z } from "zod";
 
 export const QuestionsSchema = z.object({
-  
   answers: z.array(
     z.object({
       questionId: z.string({ required_error: "question is requires" }),
@@ -9,7 +8,6 @@ export const QuestionsSchema = z.object({
     })
   ),
 
-  // time: z.number(),
   time : z.string()
 });
 

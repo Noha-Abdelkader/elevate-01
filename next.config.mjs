@@ -1,4 +1,5 @@
 import createNextIntlPlugin from "next-intl/plugin";
+
 // exam.elevateegy.com / uploads;
 const nextConfig = {
   images: {
@@ -22,6 +23,5 @@ const nextConfig = {
   },
 };
 
-//  تعدل علي ال request => next intl
 const withNextIntl = createNextIntlPlugin();
 export default withNextIntl(nextConfig);

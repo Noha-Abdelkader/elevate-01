@@ -14,18 +14,8 @@ declare type QuizDetails = {
   active: boolean;
   createdAt: string;
 };
+
 declare type QuizForm={
-  name:string;
-  icon:string
+  name: string;
+  icon: string
 }
-
-
-
-// declare type PaginatedQuizs = PaginatedData<{
-//   subjects: Quiz[];
-// }>;
-
-// declare type PaginatedQuizsDetails = PaginatedData<{
-//   subjects: QuizDetails[];
-// }>;
-

@@ -1,11 +1,10 @@
 import SearchBar from "./_components/search-bar";
 import React from "react";
 import AsideNav from "./_components/aside-nav";
-import { SearchProvider } from "@/components/providers/context/searchContext";
+import { SearchProvider } from "@/components/providers/context/search-context";
 
-const homeLayout =  ({ children  }: { children: React.ReactNode }) => {
+export default function HomeLayout({ children  }: { children: React.ReactNode })  {
 
- 
   return (
     <main className="grid grid-cols-12 gap-4 min-h-screen p-6 max-w-7xl mx-auto ">
       <AsideNav  />
@@ -20,4 +19,3 @@ const homeLayout =  ({ children  }: { children: React.ReactNode }) => {
   );
 };
 
-export default homeLayout;

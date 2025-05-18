@@ -6,8 +6,6 @@ import { JSON_HEADER } from "./lib/constants/api.constants";
 export const authOptions: NextAuthOptions = {
   pages: {
     signIn: "/signin",
-    signOut:"/signin",
-    
   },
   providers: [
     Credentials({
@@ -17,7 +15,6 @@ export const authOptions: NextAuthOptions = {
         password: {},
       },
       authorize: async (credentials) => {
-        
         const response = await fetch(`${process.env.BASEURL}/auth/signin`, {
           method: "POST",
           body: JSON.stringify({
@@ -43,7 +40,6 @@ export const authOptions: NextAuthOptions = {
   ],
   callbacks: {
     jwt: ({ token, user }) => {
-      // console.log(user , 'call back')
       if (user) {
         token.user = user.user;
         token.token = user.token;

@@ -61,7 +61,7 @@ export default function ForgetPassForm() {
         />
 
         <div className="text-end my-4">
-          {/* <Link href={"/signin"} className="text-main-100 font-medium  text-sm">
+          {/* <Link href={"/signin"} className="text-custom-main-100 font-medium  text-sm">
             Recover Password ?
             
           </Link> */}

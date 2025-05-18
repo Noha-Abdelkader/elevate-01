@@ -8,7 +8,7 @@ const QuizzesPlaceholder = () => {
           key={index}
           className="col-span-1 relative  w-full min-h-[200px] card-loader "
         >
-          <div className="w-full h-full bg-main-50 rounded-md animate-pulse"></div>
+          <div className="w-full h-full bg-custom-main-50 rounded-md animate-pulse"></div>
         </li>
       ))}
     </ul>

@@ -64,9 +64,6 @@ export default function VerifyCodeForm() {
         />
 
         <div className="text-end my-4">
-          {/* <Link href={"/signin"} className="text-main-100 font-medium  text-sm">
-            Recover Password ?
-          </Link> */}
         </div>
         {isError && <FormError>{error?.message}</FormError>}
         <Button

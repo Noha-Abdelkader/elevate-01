@@ -89,7 +89,7 @@ export default  function SignInForm() {
         <div className="text-end my-4">
           <Link
             href={"/forget-password"}
-            className="text-main-100 font-medium text-sm"
+            className="text-custom-main-100 font-medium text-sm"
           >
             Forget Password ?
           </Link>

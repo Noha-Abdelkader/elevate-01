@@ -57,9 +57,6 @@ const QuestionsForm = ({
   const form = useForm<QuestionsFields>({
     resolver: zodResolver(QuestionsSchema),
     defaultValues: {
-      // answers: questions.map((ques) => {
-      //   return { questionId: ques._id, correct: "" };
-      // }),
       answers: [
         {
           questionId: "",
@@ -188,9 +185,9 @@ const QuestionsForm = ({
             )}
 
             <div className="flex flex-col items-center justify-center gap-4">
-              <p className="text-main-800 flex items-center font-medium gap-7">
+              <p className="text-custom-main-800 flex items-center font-medium gap-7">
                 Correct{" "}
-                <span className="size-7 flex items-center justify-center rounded-full border border-main-800">
+                <span className="size-7 flex items-center justify-center rounded-full border border-custom-main-800">
                   {checkResponse?.correct}
                 </span>
               </p>
@@ -213,7 +210,7 @@ const QuestionsForm = ({
       >
         {/* header */}
         <header className="flex items-center justify-between mb-4">
-          <h4 className="text-main-100 text-xs font-medium">
+          <h4 className="text-custom-main-100 text-xs font-medium">
             Questions
             <span>
               {step + 1} of {questions.length}
@@ -239,7 +236,7 @@ const QuestionsForm = ({
                 <li
                   key={index}
                   className={` block size-2 rounded-full duration-500 ease-in-out ${
-                    step + 1 <= index ? "bg-gray-300" : "bg-main-100"
+                    step + 1 <= index ? "bg-gray-300" : "bg-custom-main-100"
                   }`}
                 ></li>
               );
@@ -284,7 +281,7 @@ const QuestionsForm = ({
                                     ${
                                       (form?.getValues("answers")[step]
                                         ?.correct ?? field.value) == answer.key
-                                        ? "bg-main-100/25"
+                                        ? "bg-custom-main-100/25"
                                         : "bg-[#EDEFF3]"
                                     }
                                     `}

@@ -45,7 +45,7 @@ export default function AuthUI({
   return (
     <>
       {/* left */}
-      <div className="bg-main-50 col-span-1 shadow_dark">
+      <div className="bg-custom-main-50 col-span-1 shadow_dark">
         <div className="min-h-screen h-full  hidden sm:flex items-center justify-center text-black  rounded-tr-[40px] rounded-br-[40px] bg-white">
           {/* 42% 58% 46% 54% / 53% 42% 58% 47% */}
           <div
@@ -54,22 +54,22 @@ export default function AuthUI({
           >
             <h1
               data-aos="fade-right"
-              className=" text-4xl lg:text-5xl font-semibold mb-2 first-letter:text-main-700"
+              className=" text-4xl lg:text-5xl font-semibold mb-2 first-letter:text-custom-main-700"
             >
               Welcome to
             </h1>
             <h1
               data-aos="fade-left"
-              className="text-main-700   text-4xl lg:text-5xl font-semibold ms-20"
+              className="text-custom-main-700   text-4xl lg:text-5xl font-semibold ms-20"
             >
               Exam App
             </h1>
             <div data-aos="fade-up">
               <p className="mt-8  flex items-center  gap-4 text-3xl font-semibold ">
-                <span className="first-letter:bg-main-100 first-letter:text-white">
+                <span className="first-letter:bg-custom-main-100 first-letter:text-white">
                   School Time
                 </span>
-                <FaSchool className="text-main-700 text-4xl" />
+                <FaSchool className="text-custom-main-700 text-4xl" />
               </p>
               <p className="mb-4 text-sm text-gray-600">
                 Online Class & Online Test !!
@@ -88,7 +88,7 @@ export default function AuthUI({
       </div>
 
       {/* right */}
-      <div className="col-span-1 bg-main-50 ">
+      <div className="col-span-1 bg-custom-main-50 ">
         <div className="max-w-sm mx-auto w-full py-20 px-10 md:px-0">
           <header className="text-end flex items-center justify-center gap-7 text-xs">
             {/* <ul>
@@ -103,7 +103,7 @@ export default function AuthUI({
               </DropdownMenuContent>
             </DropdownMenu>
           </ul> */}
-            <Link href={"/signin"} className="text-main-100 font-semibold">
+            <Link href={"/signin"} className="text-custom-main-100 font-semibold">
               Sign in
             </Link>
             <Button variant="main" size={"sm"}>
@@ -129,7 +129,7 @@ export default function AuthUI({
                     key={social.href}
                     className={`p-3 border border-dark-200/30 bg-white rounded-lg text-lg shadow_dark ${
                       index == 2 || index == 1
-                        ? "text-main-100"
+                        ? "text-custom-main-100"
                         : index == 0
                         ? "text-red-700"
                         : "text-black"

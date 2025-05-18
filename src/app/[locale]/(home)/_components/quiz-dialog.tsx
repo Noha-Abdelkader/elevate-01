@@ -51,7 +51,7 @@ const QuizDialog = () => {
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle className={`mb-2  text-main-100 `}>
+          <DialogTitle className={`mb-2  text-custom-main-100 `}>
             {step == 1 ? "Add Diploma" : "Add Question"}
           </DialogTitle>
 

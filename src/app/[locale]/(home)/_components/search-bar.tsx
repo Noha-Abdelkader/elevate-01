@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { useTranslations } from "next-intl";
 import QuizDialog from "./quiz-dialog";
 import ProfileDrawer from "./profile-drawer";
-import { useSearch } from "@/components/providers/context/searchContext";
+import { useSearch } from "@/components/providers/context/search-context";
 import { useSession } from "next-auth/react";
 
 const SearchBar = () => {

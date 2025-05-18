@@ -6,8 +6,7 @@ import { toast } from "sonner";
 import { useRouter } from "@/i18n/navigation";
 
 export function useVerifyCode() {
-
-  //   Navigation
+  // Navigation
   const router = useRouter();
 
   // Mutation
@@ -25,5 +24,6 @@ export function useVerifyCode() {
       }, 1000);
     },
   });
+
   return { mutate, isError, error, isPending };
 }

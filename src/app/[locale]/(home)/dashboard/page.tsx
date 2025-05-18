@@ -7,9 +7,6 @@ import Placeholder from "../_components/placeholder";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/auth";
 
-// searchParams,
-// }: {
-// searchParams?: { query?: string };
 const Page = async ({
 }) => {
   const session = await getServerSession(authOptions);
@@ -25,11 +22,10 @@ const Page = async ({
 
       {/* quizzes */}
       <div className="card-wrapper px-5 min-h-[420px]">
-        <div className="text-main-100 flex items-center justify-between mb-4">
-          <h2 className="text-main-100 text-base font-semibold capitalize flex items-center ">
+        <div className="text-custom-main-100 flex items-center justify-between mb-4">
+          <h2 className="text-custom-main-100 text-base font-semibold capitalize flex items-center ">
             Quizzes
           </h2>
-          {/* <Button variant={"ghost"}>View All</Button> */}
         </div>
 
         <Suspense fallback={<QuizzesPlaceholder />}>

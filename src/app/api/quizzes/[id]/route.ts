@@ -12,10 +12,10 @@ export async function GET(
     {
       method: "GET",
       headers: {
-        token: accessToken?.token??''
+        token: accessToken?.token ?? ''
       },
     }
   );
-  const payload:APIResponse<PaginatedData<{exams:QuizDetails[]}>> = await response.json();
+  const payload:APIResponse<PaginatedData<{ exams: QuizDetails[] }>> = await response.json();
   return NextResponse.json(payload);
 }

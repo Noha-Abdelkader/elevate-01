@@ -30,7 +30,7 @@ const AsideNav = () => {
     else return item.title !== "Quiz History";
   });
   return (
-    <aside className="col-span-3  border-2 border-main-50 rounded-2xl h-full p-4 py-6 shadow_dark">
+    <aside className="col-span-3  border-2 border-custom-main-50 rounded-2xl h-full p-4 py-6 shadow_dark">
       <Image
         src={Logo}
         alt="logo"
@@ -55,7 +55,7 @@ const AsideNav = () => {
               }}
               href={item.href ?? ""}
               className={`flex items-center justify-center md:justify-start gap-5  py-2 rounded-lg px-2  ${
-                path == item.href ? "bg-main-100 text-white" : "text-dark-300"
+                path == item.href ? "bg-custom-main-100 text-white" : "text-dark-300"
               }`}
             >
               <span className="text-lg">{item.icon as React.ReactNode}</span>

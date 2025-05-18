@@ -19,7 +19,6 @@ export default function PieCharts({
 
   return (
     <PieChart width={300} height={170}>
-     
       <Pie
         data={data}
         cx={120}

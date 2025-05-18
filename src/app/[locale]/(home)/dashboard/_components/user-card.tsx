@@ -13,6 +13,7 @@ import Image from "next/image";
 
 // types
 type userTrakType = { icon: unknown; time: string; header: string };
+
 const UserCard = async () => {
   // get session
   const session = await Session();
@@ -37,13 +38,13 @@ const UserCard = async () => {
           alt="user"
           width={100}
           height={0}
-          className="max-h-36 w-full bg-main-50 rounded-md "
+          className="max-h-36 w-full bg-custom-main-50 rounded-md "
         />
       </div>
 
       <div className="col-span-8 pe-5 xl:pe-0  xl:max-w-xl space-y-2 ">
         {session && (
-          <h2 className="text-main-100 text-lg font-semibold capitalize flex items-center ">
+          <h2 className="text-custom-main-100 text-lg font-semibold capitalize flex items-center ">
             {session.firstName} {session.lastName}
           </h2>
         )}
@@ -51,10 +52,6 @@ const UserCard = async () => {
           <span className="text-dark-200 text-xs">{session.username}</span>
         )}
         <Progress value={30} />
-        {/* <Progress
-          value={  Number(userData?.history.avgAnswerTime)?.toFixed(2) ??30
-          }
-        /> */}
         <ul className="grid grid-cols-3  md:grid-cols-10 gap-2 !mt-5 ">
           {userTrack.map((element, index) => {
             return (
@@ -64,7 +61,7 @@ const UserCard = async () => {
                   index == 2 ? "col-span-4" : "col-span-3"
                 } `}
               >
-                <div className="p-2 flex items-center justify-center shadow_dark bg-white text-main-100 rounded-lg text-xl size-9">
+                <div className="p-2 flex items-center justify-center shadow_dark bg-white text-custom-main-100 rounded-lg text-xl size-9">
                   {element.icon as React.ReactNode}
                 </div>
                 <div className=" text-border">
@@ -78,7 +75,8 @@ const UserCard = async () => {
                 </div>
               </li>
             );
-          })}        </ul>
+          })}
+          </ul>
       </div>
     </div>
   );
