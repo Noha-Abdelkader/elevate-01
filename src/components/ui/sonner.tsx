@@ -7,8 +7,6 @@ type ToasterProps = React.ComponentProps<typeof Sonner>
 
 const Toaster = ({ ...props }: ToasterProps) => {
   const { theme = "system" } = useTheme();
-  // const locale = useLocale();
-  // console.log(locale)
 
   return (
     <Sonner
@@ -20,10 +18,10 @@ const Toaster = ({ ...props }: ToasterProps) => {
 
         classNames: {
           toast:
-            "group toast group-[.toaster]:bg-background group-[.toaster]:text-main-700 group-[.toaster]:border-main-700 group-[.toaster]:shadow-lg",
+            "group toast group-[.toaster]:bg-background group-[.toaster]:text-custom-main-700 group-[.toaster]:border-custom-main-700 group-[.toaster]:shadow-lg",
           description: "group-[.toast]:text-muted-foreground",
           actionButton:
-            "group-[.toast]:bg-main-100 group-[.toast]:text-primary-foreground",
+            "group-[.toast]:bg-custom-main-100 group-[.toast]:text-primary-foreground",
           cancelButton:
             "group-[.toast]:bg-muted group-[.toast]:text-muted-foreground",
         },

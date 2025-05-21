@@ -7,6 +7,7 @@ import FormError from "@/components/common/form-error";
 
 const UserHistory = async () => {
   const payload = await getUserHistory();
+
   if (!payload) {
     return (
       <div className="card-wrapper text-xs flex justify-between  px-4 py-8 min-h-[400px]">
@@ -15,12 +16,13 @@ const UserHistory = async () => {
     );
   }
   const { userData, examData } = payload;
+
   return (
     <div>
       {examData?.questions.length && (
         <div className="card-wrapper text-xs flex justify-between  px-4 py-8">
           <div className="flex gap-2  ">
-            <PiExamBold className="text-main-100 size-16" />
+            <PiExamBold className="text-custom-main-100 size-16" />
             <div>
               <h3 className="text-base font-medium">
                 {examData.questions[0].exam.title}
@@ -32,7 +34,7 @@ const UserHistory = async () => {
                   ? "Question"
                   : "Questions"}
               </p>
-              <p className="text-main-100 mt-2">
+              <p className="text-custom-main-100 mt-2">
                 Answers in {Number(userData.history.avgAnswerTime).toFixed(2)}{" "}
                 min.
               </p>

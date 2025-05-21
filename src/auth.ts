@@ -33,17 +33,17 @@ export const authOptions: NextAuthOptions = {
           throw new Error(payload.message ?? "failed login");
         }
 
+        console.log("payload" , payload)
         return {
           id: payload.user._id,
           token: payload.token,
-          user: { ...payload.user },
+          user: payload.user,
         };
       },
     }),
   ],
   callbacks: {
     jwt: ({ token, user }) => {
-      // console.log(user , 'call back')
       if (user) {
         token.user = user.user;
         token.token = user.token;

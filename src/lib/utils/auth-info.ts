@@ -1,11 +1,3 @@
-// "use client";
-// import { useSession } from "next-auth/react";
-
-// export default  function Session() {
-//     const session = useSession();
-//     if (session.status == "authenticated") return session.data.user;
-//     return null;
-// }
 import "server-only";
 
 import { authOptions } from "@/auth";
@@ -20,10 +12,17 @@ export async function Session() {
 
 export async function AuthHeader() {
   const token = cookies().get("next-auth.session-token")?.value;
-  const jwt = await decode({
-    secret: process.env.NEXTAUTH_SECRET!,
-    token: token,
-  });
+  let jwt
+
+  try {
+    jwt = await decode({
+        secret: process.env.NEXTAUTH_SECRET!,
+        token: token,
+      });
+  } catch (error) {
+    void error
+  }
+
   return {
     token: jwt?.token ?? "",
   };

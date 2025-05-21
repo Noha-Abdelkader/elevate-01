@@ -8,14 +8,14 @@ const NotFound = async () => {
   // no html & body tag as layout for local handle it
 
   return (
-    <div className="flex flex-col items-center  min-h-screen text-2xl bg-main-50 space-y-4  ">
+    <div className="flex flex-col items-center  min-h-screen text-2xl bg-custom-main-50 space-y-4  ">
       <Image src={Notfound} alt="notfound" sizes={"50vw"} />
-      <p className="text-main-100 font-semibold capitalize text-4xl">
+      <p className="text-custom-main-100 font-semibold capitalize text-4xl">
         page not found
       </p>
 
       <Link href="/">
-        <span className="text-white bg-main-100 rounded-md px-7 py-3 text-base">
+        <span className="text-white bg-custom-main-100 rounded-md px-7 py-3 text-base">
           Back to home
         </span>
       </Link>

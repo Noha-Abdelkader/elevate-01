@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-// signup
+// Signup
 export const SignupSchema = z
   .object({
     username: z
@@ -36,7 +36,7 @@ export const SignupSchema = z
       ),
     rePassword: z.string({ required_error: "re-password is required" }).regex(
       /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
-      // "confirm password must contatin at least one uppercase letter,one special character (=.[#?!@$%^&*-),one number with maxlength 10 characters"
+      // "Confirm password must contatin at least one uppercase letter,one special character (=.[#?!@$%^&*-),one number with maxlength 10 characters"
 
       "confirm password must be match password"
     ),
@@ -51,7 +51,7 @@ export const SignupSchema = z
 
 export type SignupSchemaFields = z.infer<typeof SignupSchema>;
 
-// signin
+// Signin
 export const SigninSchema = z.object({
   email: z
     .string({ required_error: "email is required" })
@@ -66,7 +66,7 @@ export const SigninSchema = z.object({
 
 export type SigninSchemaFields = z.infer<typeof SigninSchema>;
 
-// forget password
+// Forget password
 export const ForgetPassSchema = z.object({
   email: z
     .string({ required_error: "email  is required" })
@@ -74,7 +74,7 @@ export const ForgetPassSchema = z.object({
 });
 export type ForgetPassSchemaFields = z.infer<typeof ForgetPassSchema>;
 
-// change password
+// Change password
 export const ChangePassSchema = z
   .object({
     oldPassword: z
@@ -102,7 +102,7 @@ export const ChangePassSchema = z
   });
 export type ChangePassSchemaFields = z.infer<typeof ChangePassSchema>;
 
-// reset password
+// Reset password
 export const ResetPassSchema = z.object({
   email: z
     .string({ required_error: "email  is required" })
@@ -117,7 +117,7 @@ export const ResetPassSchema = z.object({
 
 export type ResetPassSchemaFields = z.infer<typeof ResetPassSchema>;
 
-// verify  code
+// Verify  code
 export const VerifyCodeSchema = z.object({
   resetCode: z
     .string({ required_error: "code is required" })
@@ -127,7 +127,7 @@ export const VerifyCodeSchema = z.object({
 export type VerifyCodeSchemaFields = z.infer<typeof VerifyCodeSchema>;
 
 
-// edit profile
+// Edit profile
 export const EditProfileSchema = z.object({
   username: z
     .string({ required_error: "username is required" })

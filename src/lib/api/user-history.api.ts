@@ -17,7 +17,7 @@ async function getHistory() {
 }
 
 export default async function getUserHistory() {
-  const [userData] = await catchError(getHistory());
+  const [ userData ] = await catchError(getHistory());
 
   if (!userData) return null;
   const examId = userData?.history?.QID?.exam;

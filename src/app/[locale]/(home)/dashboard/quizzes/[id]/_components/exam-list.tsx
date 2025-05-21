@@ -25,18 +25,6 @@ const ExamList = async ({ id }: { id: string }) => {
     return payload;
   }
   const [quizzes, error] = await catchError(getExams());
-  // const {
-  //   isPending,
-  //   isError,
-  //   error,
-  //   data: quizzes,
-  // } = useQuery({
-  //   queryKey: ["quizzes", `${id}`],
-  //   queryFn: async () => {
-  //     const [payload] = await catchError(getExams());
-  //     return payload;
-  //   },
-  // });
 
   if (error)
     return (
@@ -55,7 +43,7 @@ const ExamList = async ({ id }: { id: string }) => {
               className="flex items-center justify-between card-wrapper bg-white px-5 min-h-[80px]"
             >
               <div className="flex items-center gap-2">
-                <PiExam className="text-4xl text-main-100" />
+                <PiExam className="text-4xl text-custom-main-100" />
                 <div>
                   <h4 className="text-sm font-medium capitalize">
                     {quiz.title}
@@ -83,7 +71,7 @@ const ExamList = async ({ id }: { id: string }) => {
         <div className="card-wrapper min-h-[180px] p-5  ">
           <FormError>No quizzes yet... !!!</FormError>`
           <Link
-            className="my-10 inline-block text-main-100 underline capitalize"
+            className="my-10 inline-block text-custom-main-100 underline capitalize"
             href="/dashboard"
           >
             back to quizzes list

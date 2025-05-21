@@ -1,5 +1,5 @@
 import React from "react";
-import ReactQueryProvider from "./components/react-query-provider";
+import ReactQueryProvider from "./components/react-query.provider";
 import {
   NextIntlClientProvider,
   useLocale,
@@ -7,7 +7,7 @@ import {
   useNow,
   useTimeZone,
 } from "next-intl";
-import NextAuthProvider from "./components/next-auth-provider";
+import NextAuthProvider from "./components/next-auth.provider";
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
   // to ensure intl provider will have it on client side

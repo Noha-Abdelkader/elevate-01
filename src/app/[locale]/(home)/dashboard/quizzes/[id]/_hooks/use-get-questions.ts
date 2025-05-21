@@ -10,7 +10,7 @@ export default function useGetQuestions(id: string) {
     data: questions,
     refetch,
   } = useQuery({
-    queryKey: ["questions", `${id}`],
+    queryKey: ["questions", id],
     queryFn: async () => {
       const [payload] = await catchError(getQuestionsAction(id));
       return payload;

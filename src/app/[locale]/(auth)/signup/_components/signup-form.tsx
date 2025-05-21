@@ -199,16 +199,15 @@ export default function SignUpForm() {
         />
         <h6 className="text-center my-4 text-[#313131] text-sm">
           Already have an account?
-          <Link href={"/signin"} className="text-main-100 mx-2">
+          <Link href={"/signin"} className="text-custom-main-100 mx-2">
             Login
           </Link>
         </h6>
         {error && <FormError>{error.message}</FormError>}
 
         <Button
-          onClick={() => onSubmit(form.getValues())}
           type="submit"
-          className="w-full bg-main-100 border-2 border-transparent hover:bg-transparent hover:text-main-100 hover:border-main-100 "
+          className="w-full bg-custom-main-100 border-2 border-transparent hover:bg-transparent hover:text-custom-main-100 hover:border-custom-main-100 "
           disabled={
             !form.formState.isValid && form.formState.isSubmitting
               ? true

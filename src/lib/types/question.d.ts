@@ -14,7 +14,7 @@ declare type Answer = {
   key: string;
 };
 
-declare type checkQuestions = {
+declare type CheckQuestions = {
   QID: string;
   Question: string;
   correctAnswer: string;

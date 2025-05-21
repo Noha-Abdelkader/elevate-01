@@ -14,13 +14,13 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90 ",
         outline:
-          " text-main-100 border border-main-100 bg-white shadow-sm hover:bg-main-100 hover:text-white duration-300 ease-in-out",
+          " text-custom-main-100 border border-custom-main-100 bg-white shadow-sm hover:bg-custom-main-100 hover:text-white duration-300 ease-in-out",
         secondary:
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: " !shadow-none",
-        link: "text-main-100 underline-offset-4 hover:underline",
-        main: "  border-[1px] border-transparent text-white bg-main-100 hover:bg-transparent hover:text-main-100 hover:border-main-100 ease-in-out duration-500 transition-all shadow_faint",
-        "main-before": "  border-[1px] border-transparent text-white bg-main-100 hover:bg-transparent hover:text-main-100 hover:border-main-100 ease-in-out duration-500 shadow_faint before:content-'' before:",
+        link: "text-custom-main-100 underline-offset-4 hover:underline",
+        main: "  border-[1px] border-transparent text-white bg-custom-main-100 hover:bg-transparent hover:text-custom-main-100 hover:border-custom-main-100 ease-in-out duration-500 transition-all shadow_faint",
+        "main-before": "  border-[1px] border-transparent text-white bg-custom-main-100 hover:bg-transparent hover:text-custom-main-100 hover:border-custom-main-100 ease-in-out duration-500 shadow_faint before:content-'' before:",
       },
       size: {
         default: "h-9 px-4 py-5 ",
@@ -59,8 +59,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {props.children}
 
-        {isLoading && <span className={`spinner-loader ${variant == 'outline' && 'border-color : text-main-100' }`}></span>}
-        {/* {props.isLoading ? <span className="spinner-loader"></span> : props.children} */}
+        {isLoading && <span className={`spinner-loader ${variant == 'outline' && 'border-color : text-custom-main-100' }`}></span>}
       </Comp>
     );
   }

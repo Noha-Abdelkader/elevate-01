@@ -9,7 +9,6 @@ export default function layout({
   return (
     <main className="grid  sm:grid-cols-2   ">
       {children}
-      {/* <AuthUI children={children} /> */}
     </main>
   );
 }

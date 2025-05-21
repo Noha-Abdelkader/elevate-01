@@ -4,11 +4,8 @@ import { useEffect, useState } from "react";
 
 
 export function useTimeCheck(time :number) {
-
-
   const [second, setSecond] = useState(new Date(0).setMinutes(time));
   const [timeChange , setTimeChange] = useState(new Date(0));
-  // const [timeEnd , setTimeEnd] = useState(new Date(0).setMinutes(time));
 
   function formatTime(time: number) {
     return Intl.DateTimeFormat("en-US", {

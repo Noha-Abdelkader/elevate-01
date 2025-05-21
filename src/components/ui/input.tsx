@@ -35,7 +35,7 @@ const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
             type === "password" ? (showPassword ? "text" : "password") : type
           }
           className={cn(
-            "flex h-10 w-full rounded-xl bg-dark-200/10 text-main-700 border-2 border-dark-400  px-3 py-1 text-base  transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-main-900 placeholder:text-dark-200 focus-visible:outline-none  focus-visible:border-main-700 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm shadow_main ",
+            "flex h-10 w-full rounded-xl bg-dark-200/10 text-custom-main-700 border-2 border-dark-400  px-3 py-1 text-base  transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-custom-main-900 placeholder:text-dark-200 focus-visible:outline-none  focus-visible:border-custom-main-700 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm shadow_main ",
             className,
             size && setSize(size)
           )}
@@ -48,7 +48,7 @@ const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
           {type === "password" &&
             (showPassword ? (
               <FaRegEyeSlash
-                className="text-main-700 cursor-pointer"
+                className="text-custom-main-700 cursor-pointer"
                 onClick={() => {
                   if (type === "password")
                     return setShowPassword(!showPassword);
@@ -56,7 +56,7 @@ const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
               />
             ) : (
               <FaRegEye
-                className="text-main-700 cursor-pointer"
+                className="text-custom-main-700 cursor-pointer"
                 onClick={() => {
                   if (type === "password")
                     return setShowPassword(!showPassword);

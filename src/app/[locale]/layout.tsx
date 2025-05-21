@@ -6,7 +6,6 @@ import { Toaster } from "@/components/ui/sonner";
 
 import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils/tailwaind-utils";
-// import "animate.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,16 +24,11 @@ function checkDirction(locale: string) {
   }
 }
 
-
-
 export default async  function LocaleLayout({
   children,
   params: { locale },
 }: LayoutProps) {
-  // const { locale } = await params; << next 15
 
-  // Ensure that the incoming `locale` is valid
-  // or local not found
   if (!hasLocale(routing.locales, locale)) {
     return notFound();
   }
@@ -47,7 +41,6 @@ export default async  function LocaleLayout({
       dir={checkDirction(locale)}
       className={`${cn(inter.variable)}  h-full `}
     >
-      {/* bg-[#FBF9F9] */}
       <body>
         <Providers>
           {children}
